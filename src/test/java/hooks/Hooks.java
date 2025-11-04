@@ -4,15 +4,15 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import utilities.BaseDriver;
 
-public class Hooks {
+public class Hooks extends BaseDriver{
 
     @Before
-    public void setUp() {
-        BaseDriver.setUp();
+    public void beforeScenario() {
+        setUp();
     }
 
     @After
-    public void tearDown() {
-        BaseDriver.tearDown();
+    public void afterScenario() {
+        tearDown();
     }
 }

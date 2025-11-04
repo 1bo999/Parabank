@@ -14,8 +14,6 @@ public class BaseDriver {
     public static WebDriver driver;
     public static WebDriverWait wait;
 
-    //threadlocal !!
-
     @BeforeClass
     public static void setUp() {
         switch (ConfigReader.getProperty("browser").toLowerCase()) {

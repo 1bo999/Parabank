@@ -5,14 +5,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.BaseDriver;
 
-public class LoggedInPage {
-    public LoggedInPage() {
+public class AccountOverviewPage {
+    public AccountOverviewPage() {
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
-    @FindBy(xpath = "//p/b")
-    public WebElement welcomeText;
+    @FindBy(xpath = "//h1[@class='title']")
+    public WebElement verifyAccountOverviewText;
 
-    @FindBy(linkText = "Transfer Funds")
-    public WebElement TransferFunds;
 }

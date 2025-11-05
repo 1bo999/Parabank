@@ -46,5 +46,6 @@ public class TransferFundsPage {
         String sameValue = options.get(randomIndex).getAttribute("value");
         selectFrom.selectByValue(sameValue);
         selectTo.selectByValue(sameValue);
+
     }
 }

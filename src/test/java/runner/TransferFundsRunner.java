@@ -5,9 +5,8 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {
-                "src/test/resources/features/transferFunds.feature",
-        },
-        glue = {"stepDefinitions","hooks"},
+                "src/test/resources/features/transferFunds.feature",},
+        glue = {"stepDefinitions", "hooks"},
         plugin = {"pretty", "html:target/cucumber-report.html"}
 )
 

@@ -10,7 +10,7 @@ Feature: Transfer Funds Feature
     When Verify the Transfer Funds Page
     When Click Amount Box
     Then Text the amount of the money
-    Then Select same account for both sender and receiver
+    Then Select same account for sender and receiver
     Then Click Transfer Button
     Then Verify the Transfer Complete Page
     Then Verify the info

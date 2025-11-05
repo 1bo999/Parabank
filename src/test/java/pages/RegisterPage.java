@@ -10,7 +10,7 @@ public class RegisterPage {
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
-    @FindBy(xpath = "//a[@href='register.htm']")
+    @FindBy(xpath = "(//div/p/a)[2]")
     public WebElement registerBtn;
 
     @FindBy(xpath = "//input[@id='customer.firstName']")
@@ -20,7 +20,7 @@ public class RegisterPage {
     public WebElement lastName;
 
     @FindBy(xpath = "//input[@id='customer.address.street']")
-    public WebElement Address;
+    public WebElement address;
 
     @FindBy(xpath = "//input[@id='customer.address.city']")
     public WebElement city;
@@ -49,5 +49,6 @@ public class RegisterPage {
     @FindBy(xpath = "(//input[@class='button'])[2]")
     public WebElement registerBtn2;
 
-
+    @FindBy(xpath = "//h1[@class='title']")
+    public WebElement welcomeText;
 }

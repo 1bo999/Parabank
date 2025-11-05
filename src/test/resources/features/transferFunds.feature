@@ -4,6 +4,13 @@ Feature: Transfer Funds Feature
     When Enter username and password
     When Click login button
     Then Verify Home page opened
+    Given User logged in successfully
+    When Click Open New Account
+    Then Verify Open New Account text displayed
+    Then Select type of account
+    Then Select account
+    When Click Open New Account button
+    Then Verify successful message
 
   Scenario: Successful Transfer Funds
     Given Click Transfer Funds

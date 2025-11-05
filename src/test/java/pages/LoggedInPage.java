@@ -12,4 +12,7 @@ public class LoggedInPage {
 
     @FindBy(xpath = "//p/b")
     public WebElement welcomeText;
+
+    @FindBy(linkText = "Request Loan")
+    public WebElement requestLoan;
 }

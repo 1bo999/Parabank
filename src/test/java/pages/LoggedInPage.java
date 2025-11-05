@@ -14,6 +14,8 @@ public class LoggedInPage extends ReusableMethods {
     @FindBy(xpath = "//p/b")
     public WebElement welcomeText;
 
+    @FindBy(linkText = "Transfer Funds")
+    public WebElement TransferFunds;
     @FindBy(xpath = "//*[@id='leftPanel']/ul/li[1]/a")
     public WebElement openNewAccountBtn ;
     @FindBy(linkText = "Request Loan")

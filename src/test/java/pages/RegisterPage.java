@@ -1,0 +1,53 @@
+package pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import utilities.BaseDriver;
+
+public class RegisterPage {
+    public RegisterPage() {
+        PageFactory.initElements(BaseDriver.driver, this);
+    }
+
+    @FindBy(xpath = "//a[@href='register.htm']")
+    public WebElement registerBtn;
+
+    @FindBy(xpath = "//input[@id='customer.firstName']")
+    public WebElement firstName;
+
+    @FindBy(xpath = "//input[@id='customer.lastName']")
+    public WebElement lastName;
+
+    @FindBy(xpath = "//input[@id='customer.address.street']")
+    public WebElement Address;
+
+    @FindBy(xpath = "//input[@id='customer.address.city']")
+    public WebElement city;
+
+    @FindBy(xpath = "//input[@id='customer.address.state']")
+    public WebElement state;
+
+    @FindBy(xpath = "//input[@id='customer.address.zipCode']")
+    public WebElement zipCode;
+
+    @FindBy(xpath = "//input[@id='customer.phoneNumber']")
+    public WebElement phone;
+
+    @FindBy(xpath = "//input[@id='customer.ssn']")
+    public WebElement ssn;
+
+    @FindBy(xpath = "//input[@id='customer.username']")
+    public WebElement userName;
+
+    @FindBy(xpath = "//input[@id='customer.password']")
+    public WebElement password;
+
+    @FindBy(xpath = "//input[@id='repeatedPassword']")
+    public WebElement passwordConfirm;
+
+    @FindBy(xpath = "(//input[@class='button'])[2]")
+    public WebElement registerBtn2;
+
+
+}

@@ -7,6 +7,16 @@ import utilities.BaseDriver;
 import utilities.ReusableMethods;
 
 public class OverviewPage extends ReusableMethods {
+
+    public OverviewPage(){
+        PageFactory.initElements(BaseDriver.driver,this);
+    }
+
+    @FindBy(xpath = "//p[@class='smallText']/b")
+    public WebElement overViewText;
+
+    @FindBy(xpath = "(//div[@id='leftPanel']/ul/li)[6]")
+    public WebElement updateContactInfoBtn;
     public OverviewPage() {
         PageFactory.initElements(BaseDriver.driver, this);
     }

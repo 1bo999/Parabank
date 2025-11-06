@@ -62,50 +62,62 @@
 
 <h2 style="margin-left: 20px">Contributors</h2>
 
-<p style="margin-left: 20px;">
+<table style="margin-left:20px; border-collapse:collapse;">
+  
+  <tr>
+    <td><strong>Names</strong></td>
+    <td>Links</td>
+  </tr>
+  <tr>
+    <td><strong>İbrahim Huseynli (Project Leader)</strong></td>
+    <td>
+      <a href="https://github.com/1bo999" title="İbrahim Huseynli">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png" width="20" height="20" alt="GitHub">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Gürhan Ataş</strong></td>
+    <td>
+      <a href="https://github.com/MrAtas35" title="Gürhan Ataş">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png" width="20" height="20" alt="GitHub">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Merve Çelebi</strong></td>
+    <td>
+      <a href="https://github.com/merve99celebi" title="Merve Çelebi">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png" width="20" height="20" alt="GitHub">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Sibel Cebeci</strong></td>
+    <td>
+      <a href="https://github.com/ssibelcebeci" title="Sibel Cebeci">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png" width="20" height="20" alt="GitHub">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Ramazan Doğan</strong></td>
+    <td>
+      <a href="https://github.com/ramazandogaan" title="Ramazan Doğan">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png" width="20" height="20" alt="GitHub">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Affan Ergul</strong></td>
+    <td>
+      <a href="https://github.com/affan23" title="Affan Ergul">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png" width="20" height="20" alt="GitHub">
+      </a>
+    </td>
+  </tr>
+</table>
 
-  <a href="https://github.com/1bo999" title="İbrahim Huseynli (Project Leader)" style="text-decoration:none; color:#95BFF0;">
-    <div style="display:inline-block; text-align:center; margin:6px; vertical-align:top;">
-      <img src="https://github.com/1bo999.png" width="50" height="50" style="border-radius:50%; display:block; margin:auto;" alt="Ibrahim">
-      <div style="line-height:4;"><strong>İbrahim Huseynli</strong></div>
-    </div>
-  </a>
-
-  <a href="https://github.com/MrAtas35" title="Gürhan Ataş" style="text-decoration:none; color:#95BFF0;">
-    <div style="display:inline-block; text-align:center; margin:6px; vertical-align:top;">
-      <img src="https://github.com/MrAtas35.png" width="50" height="50" style="border-radius:50%; display:block; margin:auto;" alt="Gurhan">
-      <div style="line-height:4;"><strong>Gürhan Ataş</strong></div>
-    </div>
-  </a>
-
-  <a href="https://github.com/merve99celebi" title="Merve Çelebi" style="text-decoration:none; color:#F095EA;">
-    <div style="display:inline-block; text-align:center; margin:6px; vertical-align:top;">
-      <img src="https://github.com/merve99celebi.png" width="50" height="50" style="border-radius:50%; display:block; margin:auto;" alt="Merve">
-      <div style="line-height:4;"><strong>Merve Çelebi</strong></div>
-    </div>
-  </a>
-
-  <a href="https://github.com/ssibelcebeci" title="Sibel Cebeci" style="text-decoration:none; color:#F095EA;">
-    <div style="display:inline-block; text-align:center; margin:6px; vertical-align:top;">
-      <img src="https://github.com/ssibelcebeci.png" width="50" height="50" style="border-radius:50%; display:block; margin:auto;" alt="Sibel">
-      <div style="line-height:4;"><strong>Sibel Cebeci</strong></div>
-    </div>
-  </a>
-
-  <a href="https://github.com/ramazandogaan" title="Ramazan Doğan" style="text-decoration:none; color:#95BFF0;">
-    <div style="display:inline-block; text-align:center; margin:6px; vertical-align:top;">
-      <img src="https://github.com/ramazandogaan.png" width="50" height="50" style="border-radius:50%; display:block; margin:auto;" alt="Ramazan">
-      <div style="line-height:4;"><strong>Ramazan Doğan</strong></div>
-    </div>
-  </a>
-
-  <a href="https://github.com/affan23" title="Affan Ergul" style="text-decoration:none; color:#95BFF0;">
-    <div style="display:inline-block; text-align:center; margin:6px; vertical-align:top;">
-      <img src="https://github.com/affan23.png" width="50" height="50" style="border-radius:50%; display:block; margin:auto;" alt="Affan">
-      <div style="line-height:4;"><strong>Affan Ergul</strong></div>
-    </div>
-  </a>
-</p>
 
 
 <hr>

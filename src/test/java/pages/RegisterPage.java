@@ -4,12 +4,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.BaseDriver;
+import utilities.ReusableMethods;
 
-public class RegisterPage {
+public class RegisterPage extends ReusableMethods {
     public RegisterPage() {
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
+    @FindBy(xpath = "//a[text()='Register']")
     @FindBy(xpath = "(//div/p/a)[2]")
     public WebElement registerBtn;
 
@@ -46,8 +48,14 @@ public class RegisterPage {
     @FindBy(xpath = "//input[@id='repeatedPassword']")
     public WebElement passwordConfirm;
 
-    @FindBy(xpath = "(//input[@class='button'])[2]")
+    @FindBy(xpath = "//input[@value='Register']")
     public WebElement registerBtn2;
+
+    @FindBy(linkText = "billpay.htm")
+    public WebElement billPayBtn;
+
+
+
 
     @FindBy(xpath = "//h1[@class='title']")
     public WebElement welcomeText;

@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -13,6 +14,10 @@ public class LoggedInPage extends ReusableMethods {
 
     @FindBy(xpath = "//p/b")
     public WebElement welcomeText;
+
+    @FindBy(linkText = "billpay.htm")
+    public WebElement billPayBtn;
+
 
     @FindBy(linkText = "Transfer Funds")
     public WebElement TransferFunds;

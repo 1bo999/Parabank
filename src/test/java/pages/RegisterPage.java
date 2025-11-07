@@ -1,5 +1,6 @@
 package pages;
 
+import net.datafaker.Faker;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,10 +11,6 @@ public class RegisterPage extends ReusableMethods {
     public RegisterPage() {
         PageFactory.initElements(BaseDriver.driver, this);
     }
-
-    @FindBy(xpath = "//a[text()='Register']")
-    @FindBy(xpath = "(//div/p/a)[2]")
-    public WebElement registerBtn;
 
     @FindBy(xpath = "//input[@id='customer.firstName']")
     public WebElement firstName;
@@ -48,6 +45,9 @@ public class RegisterPage extends ReusableMethods {
     @FindBy(xpath = "//input[@id='repeatedPassword']")
     public WebElement passwordConfirm;
 
+    @FindBy(xpath = "//a[text()='Register']")
+    public WebElement registerBtn;
+
     @FindBy(xpath = "//input[@value='Register']")
     public WebElement registerBtn2;
 
@@ -55,8 +55,19 @@ public class RegisterPage extends ReusableMethods {
     public WebElement billPayBtn;
 
 
-
-
     @FindBy(xpath = "//h1[@class='title']")
     public WebElement welcomeText;
+
+    public void fillCredentials() {
+        Faker faker = new Faker();
+
+        mySendKeys(firstName,faker.name().firstName());
+        mySendKeys(lastName,faker.name().lastName());
+        mySendKeys(address,faker.address().streetAddress());
+        mySendKeys(city,faker.address().city());
+        mySendKeys(state,faker.address().state());
+        mySendKeys(zipCode,faker.address().zipCode());
+        mySendKeys(phone,faker.phoneNumber().phoneNumber());
+        mySendKeys(ssn,faker.number().digits(3));
+    }
 }

@@ -17,22 +17,10 @@ public class OverviewPage extends ReusableMethods {
 
     @FindBy(xpath = "(//div[@id='leftPanel']/ul/li)[6]")
     public WebElement updateContactInfoBtn;
-    public OverviewPage() {
-        PageFactory.initElements(BaseDriver.driver, this);
-    }
 
     @FindBy(xpath = "//table[@id='accountTable']")
     public WebElement accountTable;
 
     @FindBy(linkText = "activity.htm?id=22224")
     public WebElement accountNumber;
-
-
-
-
-
-
-
-
-
 }

@@ -19,4 +19,7 @@ public class HomePage extends ReusableMethods {
 
     @FindBy(xpath ="//input[@class='button']")
     public WebElement loginBtn;
+
+    @FindBy(xpath = "//div[1]/p[2]/a")
+    public WebElement registerBtn;
 }

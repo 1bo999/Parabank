@@ -17,7 +17,7 @@ public class OpenNewAccountPage extends ReusableMethods {
     @FindBy(xpath = "//form/select[1]")
     public WebElement typeOfAccount;
 
-    @FindBy(xpath = "//select[@id='fromAccountId']")
+    @FindBy(xpath = "//select[@id='fromAccountId']/option[1]")
     public WebElement whichAccount;
 
     @FindBy(xpath = "//*[@value='Open New Account']")

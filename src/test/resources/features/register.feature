@@ -1,7 +1,11 @@
 Feature: Registration Feature
-  Scenario: Successful registration with valid inputs
+  Background: Home page opened
     Given Navigate to the Homepage
+
+  Scenario: Successful registration with valid inputs
     When Click register button
-    Then Enter a valid first name last name address city state zip code phone number ssn username password passwordConfirm
-    And Click the Register button
-    Then registration should be successful
+    Then Enter a valid credentials
+    Then Enter username
+    And Enter password
+    When Click the Register button
+    Then Verify successful registration

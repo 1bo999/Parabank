@@ -12,5 +12,5 @@ import io.cucumber.testng.CucumberOptions;
         plugin = {"pretty","html:target/cucumber-report.html"}
 )
 
-public class registerRunner extends AbstractTestNGCucumberTests {
+public class RegisterRunner extends AbstractTestNGCucumberTests {
 }

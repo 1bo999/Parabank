@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -43,23 +44,7 @@ public class OpenNewAccountSteps extends ReusableMethods {
 
     @Then("Select account")
     public void select_account() {
-        Random random = new Random();
-
-        try {
-            wait.until(ExpectedConditions.alertIsPresent());
-            Alert alert = driver.switchTo().alert();
-            alert.accept();
-        } catch (Exception _) {
-        }
-
-        Select select = new Select(onap.whichAccount);
-        List<WebElement> options = select.getOptions();
-
-        if (!options.isEmpty()) {
-            select.selectByIndex(random.nextInt(options.size() + 1));
-        } else {
-            System.out.println("No account found");
-        }
+        myClick(onap.whichAccount);
     }
 
     @When("Click Open New Account button")

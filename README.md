@@ -11,7 +11,7 @@
 </p>
 
 <p style="margin-left: 20px">
-  <em>Automated UI Testing Framework built with Java, Selenium, TestNG and Maven</em>
+  <em>Automated UI Testing Framework built with Java, Selenium, TestNG, Cucumber and Maven</em>
   for validating user journeys on the
   <a href="https://parabank.parasoft.com/parabank/index.htm" target="_blank"><strong>Parabank Web Bank</strong></a>
 </p>

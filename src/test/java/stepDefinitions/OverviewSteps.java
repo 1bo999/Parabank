@@ -16,6 +16,4 @@ public class OverviewSteps extends ReusableMethods {
     public void clickAccountNumber() {
         myClick(op.accountNumber);
     }
-
-
 }

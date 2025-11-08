@@ -45,6 +45,6 @@ public class RegisterSteps extends ReusableMethods {
 
     @Then("Verify successful registration")
     public void verifySuccessfulRegistration() {
-        verifyContainsText(rp.welcomeText,"Welcome");
+        verifyContainsText(rp.welcomeTextUser,"Welcome");
     }
 }

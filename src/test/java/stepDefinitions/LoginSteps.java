@@ -4,19 +4,19 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
-import pages.LoggedInPage;
+import pages.OverviewPage;
 import utilities.ConfigReader;
 import utilities.ReusableMethods;
 
 public class LoginSteps extends ReusableMethods {
 
     HomePage hp;
-    LoggedInPage lip;
+    OverviewPage op;
 
     @Given("Navigate to the Homepage")
     public void navigate_to_the_homepage() {
         hp = new HomePage();
-        lip = new LoggedInPage();
+        op = new OverviewPage();
 
         driver.get(ConfigReader.getProperty("url"));
     }
@@ -31,6 +31,6 @@ public class LoginSteps extends ReusableMethods {
     }
     @Then("Verify Home page opened")
     public void verify_home_page_opened() {
-        verifyContainsText(lip.welcomeText,"Welcome");
+        verifyContainsText(op.welcomeTextName,"Welcome");
     }
 }

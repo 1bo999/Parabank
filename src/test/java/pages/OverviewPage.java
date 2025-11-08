@@ -12,10 +12,25 @@ public class OverviewPage extends ReusableMethods {
         PageFactory.initElements(BaseDriver.driver,this);
     }
 
-    @FindBy(xpath = "//p[@class='smallText']/b")
+    @FindBy(xpath = "//p/b")
+    public WebElement welcomeTextName;
+
+    @FindBy(xpath = "//div/div[1]/h1")
     public WebElement overViewText;
 
-    @FindBy(xpath = "(//div[@id='leftPanel']/ul/li)[6]")
+    @FindBy(xpath = "//*[@id='leftPanel']/ul/li[1]/a")
+    public WebElement openNewAccountBtn ;
+
+    @FindBy(linkText = "Transfer Funds")
+    public WebElement TransferFunds;
+
+    @FindBy(linkText = "Request Loan")
+    public WebElement requestLoan;
+
+    @FindBy(linkText = "billpay.htm")
+    public WebElement billPayBtn;
+
+    @FindBy(xpath = "//*[@id='leftPanel']/ul/li[6]/a")
     public WebElement updateContactInfoBtn;
 
     @FindBy(xpath = "//table[@id='accountTable']")

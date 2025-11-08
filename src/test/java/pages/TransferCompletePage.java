@@ -18,5 +18,4 @@ public class TransferCompletePage {
 
     @FindBy(linkText = "Accounts Overview")
     public WebElement clickAccountOverview;
-
 }

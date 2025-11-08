@@ -12,12 +12,12 @@ public class TransactionPage extends ReusableMethods {
     }
 
     @FindBy(xpath = "//div[@id='rightPanel']/h1")
-    public WebElement transactionDetails;
+    public WebElement transactionDetailsText;
 
     @FindBy(xpath = "//td[b[text()='Date:']]/following-sibling::td")
     public WebElement paymentDate;
 
-    @FindBy(xpath = "//td[b[text()='Description:']]/following-sibling::td")
+    @FindBy(xpath = "//table/tbody/tr[3]/td[2]")
     public WebElement paymentDescription;
 
     @FindBy(xpath = "//td[b[text()='Amount:']]/following-sibling::td")

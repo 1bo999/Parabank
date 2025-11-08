@@ -1,4 +1,5 @@
 Feature: Registration Feature
+
   Background: Home page opened
     Given Navigate to the Homepage
 

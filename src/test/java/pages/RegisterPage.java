@@ -12,6 +12,9 @@ public class RegisterPage extends ReusableMethods {
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
+    @FindBy(xpath = "//p/b")
+    public WebElement welcomeTextName;
+
     @FindBy(xpath = "//input[@id='customer.firstName']")
     public WebElement firstName;
 
@@ -56,7 +59,7 @@ public class RegisterPage extends ReusableMethods {
 
 
     @FindBy(xpath = "//h1[@class='title']")
-    public WebElement welcomeText;
+    public WebElement welcomeTextUser;
 
     public void fillCredentials() {
         Faker faker = new Faker();

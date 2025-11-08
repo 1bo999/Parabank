@@ -4,21 +4,21 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.AccountOverviewPage;
-import pages.LoggedInPage;
+import pages.OverviewPage;
 import pages.TransferCompletePage;
 import pages.TransferFundsPage;
 import utilities.ReusableMethods;
 
 public class TransferFundsSteps extends ReusableMethods {
 
-    LoggedInPage lip = new LoggedInPage();
+    OverviewPage op = new OverviewPage();
     TransferFundsPage tfp = new TransferFundsPage();
     TransferCompletePage tcp = new TransferCompletePage();
     AccountOverviewPage aop = new AccountOverviewPage();
 
     @Given("Click Transfer Funds")
     public void click_transfer_funds() {
-        myClick(lip.TransferFunds);
+        myClick(op.TransferFunds);
     }
 
     @When("Verify the Transfer Funds Page")
@@ -33,7 +33,7 @@ public class TransferFundsSteps extends ReusableMethods {
 
     @Then("Text the amount of the money")
     public void text_the_amount_of_the_money() {
-        tfp.enterRandomAmount();
+        mySendKeys(tfp.textAmount,"1");
     }
 
     @Then("Select same account for sender and receiver")

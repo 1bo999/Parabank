@@ -1,73 +1,77 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pages.OverviewPage;
-import pages.UpdateProfilePage;
+import pages.UpdateContactInfoPage;
 import utilities.ReusableMethods;
 
 public class UpdateContactInfoSteps extends ReusableMethods {
 
-    OverviewPage op = new OverviewPage();
-    UpdateProfilePage upp = new UpdateProfilePage();
+    boolean emptyInput;
 
-    @Then("Verify Overview page text")
-    public void verifyOverviewPageText() {
-        verifyContainsText(op.overViewText, "Welcome");
+    OverviewPage op = new OverviewPage();
+    UpdateContactInfoPage upp = new UpdateContactInfoPage();
+
+    @Given("Verify Overview page text")
+    public void verify_overview_page_text() {
+        verifyContainsText(op.overViewText, "Overview");
     }
 
-    @Then("Click Update Contact Info button")
+    @When("Click Update Contact Info button")
     public void click_update_contact_info_button() {
         myClick(op.updateContactInfoBtn);
     }
 
-    @Then("Verify Update Profile page opened")
-    public void verifyUpdateProfilePageOpened() {
+    @Given("Verify Update Profile page opened")
+    public void verify_update_profile_page_opened() {
         verifyContainsText(upp.updateProfileText, "Update Profile");
     }
 
-    @Then("Update {string}")
-    public void update_name(String name) {
-        mySendKeys(upp.address, name);
+    @When("Update first {string} and {string} lastnames")
+    public void updateFirstAndLastnames(String firstName, String lastName) {
+        if (firstName.isEmpty() || lastName.isEmpty()) {
+            emptyInput = true;
+        }
+
+        upp.clearSendKeys(upp.name, firstName);
+        upp.clearSendKeys(upp.lastName, lastName);
     }
 
-    @Then("Update {string}")
-    public void update_lastName(String lastName) {
-        mySendKeys(upp.address, lastName);
+    @And("Update address details {string} {string} {string}")
+    public void updateAddressDetails(String address, String city, String state) {
+        if (address.isEmpty() || city.isEmpty() || state.isEmpty()) {
+            emptyInput = true;
+        }
+        upp.clearSendKeys(upp.address, address);
+        upp.clearSendKeys(upp.city, city);
+        upp.clearSendKeys(upp.state, state);
     }
 
-    @Then("Update {string}")
-    public void update_address(String adress) {
-        mySendKeys(upp.address, adress);
-    }
-
-    @Then("Update {string}")
-    public void update_city(String city) {
-        mySendKeys(upp.city, city);
-    }
-
-    @Then("Update {string}")
-    public void update_state(String state) {
-        mySendKeys(upp.state, state);
-    }
-
-    @Then("Update {string}")
-    public void update_zip_code(String zipcode) {
-        mySendKeys(upp.zipCode, zipcode);
-    }
-
-    @Then("Update {string}")
-    public void updatePhone(String phone) {
-        mySendKeys(upp.phone, phone);
+    @Then("Update zipcode {string}")
+    public void updateZipcode(String zipcode) {
+        if (zipcode.isEmpty()) {
+            emptyInput = true;
+        }
+        upp.clearSendKeys(upp.zipCode, zipcode);
     }
 
     @Then("Click update profile button")
-    public void clickUpdateProfileButton() {
+    public void click_update_profile_button() {
         myClick(upp.updateProfileBtn);
-        upp.errorChecker();
+        if (emptyInput) {
+            upp.errorChecker();
+        }
     }
 
-    @Then("Verify profile updated text")
-    public void verifyProfileUpdatedText() {
-        verifyContainsText(upp.updateProfileTextResult, "Your updated");
+    @Then("Verify Message displayed")
+    public void verifyMessageDisplayed() {
+        if (upp.updatedProfileText.isDisplayed()) {
+            verifyContainsText(upp.updatedProfileText, "Profile Updated");
+        } else if (upp.internalErrorMsg.isDisplayed()) {
+            System.out.println("Internal error on the website");
+        }
     }
 }

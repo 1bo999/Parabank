@@ -129,5 +129,5 @@
 <hr>
 
 <p style="margin-left: 20px">
-  <em>Built with ❤️ for maintainable, scalable UI tests.</em>
+  <em>Built for maintainable, scalable UI tests.</em>
 </p>

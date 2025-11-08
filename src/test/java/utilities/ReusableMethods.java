@@ -13,6 +13,7 @@ public class ReusableMethods extends BaseDriver {
             throw new RuntimeException(e);
         }
     }
+
     public void myClick(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();

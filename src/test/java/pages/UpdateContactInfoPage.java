@@ -3,18 +3,19 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import utilities.BaseDriver;
 import utilities.ReusableMethods;
 
 import java.util.List;
 
-public class UpdateProfilePage extends ReusableMethods {
+public class UpdateContactInfoPage extends ReusableMethods {
 
-    public UpdateProfilePage() {
+    public UpdateContactInfoPage() {
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
-    @FindBy(xpath = "//div[@id='updateProfileForm']/h1")
+    @FindBy(xpath = "//div[1]/h1")
     public WebElement updateProfileText;
 
     @FindBy(xpath = "//tbody/tr[1]/td/input")
@@ -41,17 +42,32 @@ public class UpdateProfilePage extends ReusableMethods {
     @FindBy(xpath = "//input[@type='button']")
     public WebElement updateProfileBtn;
 
-    @FindBy(xpath = "//h1[text()='Profile Updated']/following-sibling::p")
-    public WebElement updateProfileTextResult;
+    @FindBy(xpath = "//*[@id='updateProfileResult']/h1")
+    public WebElement updatedProfileText;
 
     @FindBy(xpath = "//tbody/tr/td[3]/span")
     public List<WebElement> updateErrors;
+
+    @FindBy(xpath = "//*[@id='updateProfileError']/p")
+    public WebElement internalErrorMsg;
+
+    public void clearSendKeys(WebElement element, String text) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+        element.clear();
+
+        if (!text.isEmpty()) {
+            element.sendKeys(text);
+        } else {
+            threadWait(1);
+            element.clear();
+        }
+    }
 
     public void errorChecker() {
         for (int i = 0; i < updateErrors.size(); i++) {
             if (updateErrors.get(i).isDisplayed()) {
                 verifyContainsText(updateErrors.get(i), expectedErMsg().get(i));
-                System.out.println("Error displayed");
+                System.out.println("Error message displayed");
             }
         }
     }

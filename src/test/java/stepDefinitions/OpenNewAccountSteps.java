@@ -3,32 +3,25 @@ package stepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import pages.LoggedInPage;
 import pages.OpenNewAccountPage;
+import pages.OverviewPage;
 import utilities.ReusableMethods;
-
-import java.util.List;
-import java.util.Random;
 
 public class OpenNewAccountSteps extends ReusableMethods {
 
-    LoggedInPage lip;
     OpenNewAccountPage onap;
+    OverviewPage op;
 
     @Given("User logged in successfully")
     public void userLoggedInSuccessfully() {
-        lip = new LoggedInPage();
         onap = new OpenNewAccountPage();
+        op = new OverviewPage();
     }
 
     @When("Click Open New Account")
     public void click_open_new_account() {
-        myClick(lip.openNewAccountBtn);
+        myClick(op.openNewAccountBtn);
     }
 
     @Then("Verify Open New Account text displayed")

@@ -36,9 +36,6 @@ public class UpdateContactInfoPage extends ReusableMethods {
     @FindBy(id = "customer.address.zipCode")
     public WebElement zipCode;
 
-    @FindBy(id = "customer.phoneNumber")
-    public WebElement phone;
-
     @FindBy(xpath = "//input[@type='button']")
     public WebElement updateProfileBtn;
 

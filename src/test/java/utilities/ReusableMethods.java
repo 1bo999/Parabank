@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class ReusableMethods extends BaseDriver {
     public static void threadWait(int seconds) {
         try {
@@ -39,5 +41,13 @@ public class ReusableMethods extends BaseDriver {
     public void verifyContainsText(WebElement element, String text) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, text));
         Assert.assertTrue(element.getText().toLowerCase().contains(text.toLowerCase()));
+    }
+
+    public void waitUntilClickable(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public void waitForElementsToBeVisible(List<WebElement> elements) {
+        wait.until(ExpectedConditions.visibilityOfAllElements(elements));
     }
 }

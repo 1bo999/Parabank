@@ -7,7 +7,6 @@ import utilities.BaseDriver;
 import utilities.ReusableMethods;
 
 import java.util.List;
-import java.util.Random;
 
 public class TransferFundsPage extends ReusableMethods {
     public TransferFundsPage() {

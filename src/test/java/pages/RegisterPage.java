@@ -12,9 +12,6 @@ public class RegisterPage extends ReusableMethods {
         PageFactory.initElements(BaseDriver.driver, this);
     }
 
-    @FindBy(xpath = "//p/b")
-    public WebElement welcomeTextName;
-
     @FindBy(xpath = "//input[@id='customer.firstName']")
     public WebElement firstName;
 
@@ -48,15 +45,8 @@ public class RegisterPage extends ReusableMethods {
     @FindBy(xpath = "//input[@id='repeatedPassword']")
     public WebElement passwordConfirm;
 
-    @FindBy(xpath = "//a[text()='Register']")
-    public WebElement registerBtn;
-
     @FindBy(xpath = "//input[@value='Register']")
     public WebElement registerBtn2;
-
-    @FindBy(linkText = "billpay.htm")
-    public WebElement billPayBtn;
-
 
     @FindBy(xpath = "//h1[@class='title']")
     public WebElement welcomeTextUser;

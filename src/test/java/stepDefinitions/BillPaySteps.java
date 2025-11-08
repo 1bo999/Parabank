@@ -1,87 +1,107 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.support.ui.Select;
-import pages.BillPayPage;
-import pages.RegisterPage;
-import utilities.ConfigReader;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import pages.*;
 import utilities.ReusableMethods;
 
+import java.util.List;
+import java.util.Random;
+
 public class BillPaySteps extends ReusableMethods {
-    RegisterPage rp;
-    BillPayPage bpp;
+    OverviewPage op = new OverviewPage();
+    BillPayPage bpp = new BillPayPage();
+    ActivityPage ap = new ActivityPage();
+    TransactionPage tp = new TransactionPage();
+    Random random = new Random();
+    String accountID;
 
-    @When("Click billPay button")
-    public void Click_billPay_button() {
-        myClick(rp.registerBtn);
+    @Given("User clicks on Bill Pay button")
+    public void user_clicks_on_bill_pay_button() {
+        waitForElementsToBeVisible(op.accountNo);
+        int randomI = random.nextInt(op.accountNo.size());
+        accountID = op.accountNo.get(randomI).getText();
+
+        myClick(op.billPayBtn);
     }
 
-    @Then("Enter payee name")
-    public void Enter_payee_name() {
-        mySendKeys(bpp.payeeNameInput, ConfigReader.getProperty("payeeName1"));
+    @When("User enters {string} information")
+    public void user_enters_information(String payment) {
+        verifyContainsText(bpp.billPaymntServcText, "Bill Payment Service");
+        mySendKeys(bpp.payeeNameInput, payment);
+        bpp.fillInfo();
     }
 
-    @Then("Enter address")
-    public void enter_Address() {
-        mySendKeys(bpp.addressInput, ConfigReader.getProperty("address"));
+    @When("User enters the {string}")
+    public void user_enters_the(String amount) {
+        mySendKeys(bpp.amountInput, amount);
     }
 
-    @Then("Enter city")
-    public void enter_City() {
-        mySendKeys(bpp.cityInput, ConfigReader.getProperty("city"));
+    @When("Selects the from account")
+    public void selects_the_from_account() {
+        myClick(bpp.selectFromAccount);
+
+        clickOptionByText(bpp.fromAccountOps, accountID);
     }
 
-    @Then("Enter state")
-    public void enter_State() {
-        mySendKeys(bpp.stateInput, ConfigReader.getProperty("state"));
-    }
-
-    @Then("Enter zipcode")
-    public void enter_Zipcode() {
-        mySendKeys(bpp.zipCodeInput, ConfigReader.getProperty("zipcode"));
-    }
-
-    @Then("Enter phone")
-    public void enter_Phone() {
-        mySendKeys(bpp.phoneInput, ConfigReader.getProperty("phoneNr"));
-    }
-
-    @Then("Enter account")
-    public void enter_Account() {
-        mySendKeys(bpp.accountInput, ConfigReader.getProperty("accountNr"));
-    }
-
-    @Then("Enter verify account")
-    public void enter_VerifyAccount() {
-        mySendKeys(bpp.verifyAccountInput, ConfigReader.getProperty("accountNr"));
-    }
-
-    @Then("Enter amount")
-    public void enter_Amount() {
-        mySendKeys(bpp.amountInput, String.valueOf(ConfigReader.getIntProperty("amount1")));
-    }
-
-    @And("Select from account number")
-    public void select_From_AccountNumber() {
-        Select select = new Select(bpp.selectFromAccount);
-        select.getFirstSelectedOption();
-    }
-
-    @Then("Click send payment")
-    public void click_Send_Payment() {
+    @When("User clicks send payment button")
+    public void user_clicks_send_payment_button() {
         myClick(bpp.sendPaymentBtn);
     }
 
-    @Then("Display completedPaymentMessage")
-    public void display_CompletedPaymentMessage() {
+    @Then("Verify payment complete message")
+    public void verify_payment_complete_message() {
         verifyContainsText(bpp.completedPaymentMessage, "Bill Payment Complete");
     }
 
-    @Then("Click Accounts Overview button")
-    public void clickAccountsOverviewButton() {
+    @Given("User clicks on Accounts Overview button")
+    public void user_clicks_on_accounts_overview_button() {
         myClick(bpp.accountsOverviewBtn);
     }
 
+    @When("Verify Overview page opened")
+    public void verify_overview_page_opened() {
+        verifyContainsText(op.overViewText, "Accounts Overview");
+    }
+
+    @Given("User clicks the paid from account")
+    public void user_clicks_the_paid_from_account() {
+        waitForElementsToBeVisible(op.accountNo);
+        clickOptionByText(op.accountNo, accountID);
+    }
+
+    @Then("Verify Account Activity page opened")
+    public void verify_account_activity_page_opened() {
+        verifyContainsText(ap.accountDetailsText, "Account Details");
+    }
+
+    @When("User clicks type of {string}")
+    public void user_clicks_type_of(String payment) {
+        wait.until(ExpectedConditions.visibilityOf(ap.transactionTable));
+        clickOptionByText(ap.transactionLink, payment);
+    }
+
+    @Then("Verify Transaction Details page opened")
+    public void verify_transaction_details_page_opened() {
+        verifyContainsText(tp.transactionDetailsText, "Transaction Details");
+    }
+
+    @Then("Verify Transaction Details displayed {string}")
+    public void verify_transaction_details_displayed(String payment) {
+        verifyContainsText(tp.paymentDescription, payment);
+    }
+
+    public void clickOptionByText(List<WebElement> optionsList, String targetText) {
+        wait.until(ExpectedConditions.visibilityOfAllElements(optionsList));
+        for (WebElement element : optionsList) {
+            if (element.getText().contains(targetText)) {
+                wait.until(ExpectedConditions.elementToBeClickable(element));
+                myClick(element);
+                break;
+            }
+        }
+    }
 }

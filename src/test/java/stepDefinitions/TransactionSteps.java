@@ -11,7 +11,7 @@ public class TransactionSteps extends ReusableMethods {
 
 @Given("Transaction Details")
     public void Transaction_Details(){
-verifyContainsText(tp.transactionDetails, "Transaction Details");
+verifyContainsText(tp.transactionDetailsText, "Transaction Details");
 }
 @Then("Verify date of payment")
     public void verifyDateOfPayment() {

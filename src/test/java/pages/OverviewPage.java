@@ -6,6 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.BaseDriver;
 import utilities.ReusableMethods;
 
+import java.util.List;
+
 public class OverviewPage extends ReusableMethods {
 
     public OverviewPage(){
@@ -27,8 +29,11 @@ public class OverviewPage extends ReusableMethods {
     @FindBy(linkText = "Request Loan")
     public WebElement requestLoan;
 
-    @FindBy(linkText = "billpay.htm")
+    @FindBy(xpath = "//div[@id='leftPanel']/ul/li[4]/a")
     public WebElement billPayBtn;
+
+    @FindBy(xpath = "//tbody/tr/td/a")
+    public List<WebElement> accountNo;
 
     @FindBy(xpath = "//*[@id='leftPanel']/ul/li[6]/a")
     public WebElement updateContactInfoBtn;
